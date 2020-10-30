@@ -10,8 +10,7 @@ import { createStore } from 'redux';
 
 import { initialState, reducer } from './context';
 
-import WelcomePage from './pages/WelcomePage';
-import Login from './pages/Login';
+import {WelcomePage, Login} from './pages';
 
 
 const store = createStore(reducer, initialState);
@@ -24,12 +23,16 @@ function Router() {
             <NavigationContainer>
                 <Stack.Navigator>
                     <Stack.Screen
-                        name="Login Page"
+                        name=">> Clarusway Login Page"
                         component={Login}
+                        
                     />
                     <Stack.Screen
-                        name='Welcome Page'
+                        name='Welcome to Clarusway'
                         component={WelcomePage}
+                        // options = {{
+                        //     headerShown:false
+                        // }}
                     />
                 </Stack.Navigator>
             </NavigationContainer>
